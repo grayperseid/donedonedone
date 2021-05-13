@@ -1,0 +1,29 @@
+<div class="pad-top-3">
+  <section class="h-100">
+    <header class="container h-100">
+      <div class="card d-flex align-items-center h-100">
+        <p id="notice"><%= notice %></p>
+
+        <div class="card-title">
+          <h2 class="color-salmon">Recently Completed</h2>
+        </div>
+
+        <div class="card-body d-flex flex-column">
+          <table>
+            <tbody>
+              <% @list_items.each do |list_item| %>
+                <tr>
+                  <td><%= "#{list_item.description}" %></td>
+                  <td><%= link_to 'Delete', list_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+          </br>
+          <p class="text-center"><%= link_to "View My To-Do's", root_path %></p>
+        </div>
+
+      </div>
+    </header>
+  </section>
+</div>
